@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :cocktails, only: :index
-  resources :cocktails, only: :show
-  resources :cocktails, only: :new
+  # resources :cocktails, only: :index
+  resources :cocktails, only: [:show, :new, :create, :index, :edit, :update, :destroy]
+
+  # get    "cocktails/new",      to: "cocktails#new"
+  # post   "cocktails",          to: "cocktails#create"
+
+  # NB: The `show` route needs to be *after* `new` route.
+  # get    "cocktails/:id",      to: "cocktails#show"
+
+  # get    "cocktails/:id/edit", to: "cocktails#edit"
+  # patch  "cocktails/:id",      to: "cocktails#update"
+
+  # delete "cocktails/:id",      to: "cocktails#destroy"
+
 end
 # resources :articles, shallow: true do
 #   resources :comments

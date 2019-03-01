@@ -2,4 +2,8 @@
 
 <h1><%= @cocktail.name %></h1>
 <p><%= "test" %></p>
+<%= link_to 'Back to cocktails list', cocktails_path %>
+<%= link_to 'Edit cocktail', edit_cocktail_path %>
+<%= link_to 'Delete cocktail', cocktail_path(@cocktail.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+
 
